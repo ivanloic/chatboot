@@ -1,25 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-// import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import ClientChat from "./pages/ClientChat";
-// import AdminLogin from "./pages/AdminLogin";
+import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 
 export default function App() {
   return (
     <BrowserRouter>
-     <AuthProvider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<ClientChat />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          {/* <Route
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
             path="/admin"
             element={
               <ProtectedRoute>
                 <AdminDashboard />
               </ProtectedRoute>
             }
-          /> */}
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
