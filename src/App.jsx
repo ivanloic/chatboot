@@ -11,12 +11,12 @@ export default function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<ClientChat />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/login" element={<AdminDashboard/>} />
           <Route
             path="/admin"
             element={
               <ProtectedRoute>
-                <AdminDashboard />
+                <AdminLogin />
               </ProtectedRoute>
             }
           />
