@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [adminUser, setAdminUser] = useState(null);
-  const [checkingAuth, setCheckingAuth] = useState(true);
+  const [checkingAuth, setCheckingAuth] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
